@@ -43,5 +43,5 @@ async function readProjectPackageJson(project: nx.ProjectGraphProjectNode) {
 
 export async function printProjectsToPublish() {
   const projects = await getNotPublishedProjects();
-  console.log(projects.map(({ name }) => name).join(','));
+  console.log(projects.map(({ name }) => name).join(',') || null);
 }
