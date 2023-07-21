@@ -5,7 +5,7 @@
   "scripts": {
     "bin": "rm -rf node_modules/.bin && npm i",
     "preversion": "nx affected --target=version --base=v${npm_old_version} ${npm_new_version} --workspaces-update=false",
-    "version": "npm install --silent --ignore-scripts --package-lock-only --fund=false --audit=false && git add -A"
+    "version": "npm install --ignore-scripts --package-lock-only --fund=false --audit=false && git add -A"
   },
   "private": true,
   "dependencies": {
