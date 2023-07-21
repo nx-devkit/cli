@@ -1,0 +1,47 @@
+{
+  "name": "publisher",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/publisher/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/publisher",
+        "main": "packages/publisher/src/index.ts",
+        "tsConfig": "packages/publisher/tsconfig.lib.json",
+        "assets": [
+          "packages/publisher/*.md"
+        ]
+      },
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/publisher/**/*.ts"
+        ]
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm publish",
+        "cwd": "dist/packages/publisher"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    }
+  },
+  "tags": []
+}

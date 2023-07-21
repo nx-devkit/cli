@@ -1,0 +1,8 @@
+{
+  "name": "nx-publisher",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "bin": {
+    "get-projects-to-publish": "src/bin/get-projects-to-publish.js"
+  }
+}
