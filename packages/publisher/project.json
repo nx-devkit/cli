@@ -32,6 +32,13 @@
         ]
       }
     },
+    "version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm version",
+        "cwd": "packages/publisher"
+      }
+    },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
