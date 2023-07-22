@@ -4,5 +4,10 @@
   "type": "commonjs",
   "bin": {
     "get-projects-to-publish": "src/bin/get-projects-to-publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nx-devkit/cli.git",
+    "directory": "packages/publisher"
   }
 }
