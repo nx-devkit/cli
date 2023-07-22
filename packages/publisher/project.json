@@ -14,7 +14,8 @@
         "main": "packages/publisher/src/index.ts",
         "tsConfig": "packages/publisher/tsconfig.lib.json",
         "assets": [
-          "packages/publisher/*.md"
+          "packages/publisher/*.md",
+          "packages/publisher/src/bin/get-projects-to-publish.js"
         ]
       },
       "dependsOn": [
