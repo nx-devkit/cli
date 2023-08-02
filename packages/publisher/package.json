@@ -9,5 +9,12 @@
     "type": "git",
     "url": "https://github.com/nx-devkit/cli.git",
     "directory": "packages/publisher"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "@nx/devkit": "16.6.0",
+    "nx": "16.6.0",
+    "execa": "^7.1.1",
+    "tslib": "^2.3.0"
   }
 }

@@ -47,7 +47,8 @@
         "lintFilePatterns": [
           "packages/nx-ts-config/**/*.ts",
           "packages/nx-ts-config/package.json"
-        ]
+        ],
+        "fix": true
       }
     },
     "test": {
