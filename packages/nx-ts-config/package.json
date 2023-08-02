@@ -10,5 +10,10 @@
   "peerDependencies": {
     "nx": ">=14.9",
     "@nx/devkit": ">=14.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nx-devkit/cli.git",
+    "directory": "packages/nx-ts-config"
   }
 }
