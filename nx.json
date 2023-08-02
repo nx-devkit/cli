@@ -47,6 +47,11 @@
       "dependsOn": [
         "build"
       ]
+    },
+    "publish": {
+      "dependsOn": [
+        "build"
+      ]
     }
   },
   "namedInputs": {
