@@ -1,6 +1,6 @@
 {
   "name": "@nx-devkit/cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "scripts": {
     "bin": "rm -rf node_modules/.bin && npm i",
@@ -45,4 +45,3 @@
     "packages/*"
   ]
 }
-
