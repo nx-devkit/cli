@@ -2,7 +2,7 @@ import { ProjectConfiguration } from '@nx/devkit';
 
 export default {
   targets: {
-    noop: {
+    'noop-target': {
       executor: 'nx:noop',
     },
   },

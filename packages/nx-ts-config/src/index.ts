@@ -2,10 +2,12 @@ import {
   ProjectGraph,
   ProjectGraphBuilder,
   ProjectGraphProcessorContext,
+  workspaceRoot,
 } from '@nx/devkit';
 import path = require('path');
 
 import { deepmerge } from 'deepmerge-ts';
+import importConfig from './importConfig';
 
 export async function processProjectGraph(
   graph: ProjectGraph,
@@ -21,8 +23,10 @@ export async function processProjectGraph(
     if (context.fileMap[project.name].some(({ file }) => file === projectTs)) {
       //import project ts
       try {
-        const config = await import(projectTs);
-        project.data = deepmerge(project.data, config.default);
+        const config = await importConfig(project.data.root);
+        Object.assign(project, {
+          data: deepmerge(project.data, config),
+        });
       } catch (error) {
         console.error(error);
       }
