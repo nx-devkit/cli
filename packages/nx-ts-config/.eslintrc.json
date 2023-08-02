@@ -35,7 +35,15 @@
       ],
       "parser": "jsonc-eslint-parser",
       "rules": {
-        "@nx/nx-plugin-checks": "error"
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredDependencies": [
+              "nx",
+              "@nx/devkit"
+            ]
+          }
+        ]
       }
     }
   ]

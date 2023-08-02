@@ -2,7 +2,6 @@ import {
   ProjectGraph,
   ProjectGraphBuilder,
   ProjectGraphProcessorContext,
-  workspaceRoot,
 } from '@nx/devkit';
 import path = require('path');
 
