@@ -5,15 +5,26 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
         "accessToken": "MWZmYTAwNWMtMmNhNC00NGQwLTk1ZDktYjE1Mjk4ZjZlYzllfHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build", "lint"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build",
+        "lint"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "lint": {
       "inputs": [
@@ -26,11 +37,23 @@
       }
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ]
+    },
+    "version": {
+      "dependsOn": [
+        "build"
+      ]
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -46,7 +69,9 @@
     "appsDir": "packages",
     "libsDir": "packages"
   },
-  "plugins": ["nx-ts-config"],
+  "plugins": [
+    "nx-ts-config"
+  ],
   "pluginsConfig": {
     "@nx/js": {
       "analyzeSourceFiles": true
