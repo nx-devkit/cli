@@ -1,4 +1,8 @@
-import * as nx from '@nx/devkit';
+import {
+  ProjectGraphProjectNode,
+  readCachedProjectGraph,
+  workspaceRoot,
+} from '@nx/devkit';
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { PackageJson } from 'nx/src/utils/package-json.js';
@@ -6,9 +10,9 @@ import { PackageJson } from 'nx/src/utils/package-json.js';
 export async function getNotPublishedProjects() {
   const { $ } = await import('execa');
 
-  const graph = nx.readCachedProjectGraph();
+  const graph = readCachedProjectGraph();
 
-  const projects = [] as Array<nx.ProjectGraphProjectNode>;
+  const projects = [] as Array<ProjectGraphProjectNode>;
 
   for (const project of Object.values(graph.nodes)) {
     // we are only interested in publishable libraries
@@ -30,9 +34,9 @@ export async function getNotPublishedProjects() {
   return projects;
 }
 
-async function readProjectPackageJson(project: nx.ProjectGraphProjectNode) {
+async function readProjectPackageJson(project: ProjectGraphProjectNode) {
   const pkg_json_path = resolve(
-    nx.workspaceRoot,
+    workspaceRoot,
     project.data.root,
     'package.json'
   );
